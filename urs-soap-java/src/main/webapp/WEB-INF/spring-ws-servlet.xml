@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:sws="http://www.springframework.org/schema/web-services"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/web-services
+        http://www.springframework.org/schema/web-services/web-services-2.0.xsd">
+
+	<context:component-scan base-package="com.raytheon.eosdis.urs" />
+
+	<sws:annotation-driven />
+
+	<sws:interceptors>
+		<bean
+			class="org.springframework.ws.server.endpoint.interceptor.PayloadLoggingInterceptor">
+			<description>
+				This interceptor logs the message payload.
+            </description>
+		</bean>
+	</sws:interceptors>
+
+	<sws:dynamic-wsdl id="urs" portTypeName="URS" locationUri="http://localhost:8080/urs/services">
+		<sws:xsd location="/WEB-INF/HelloSoap.xsd" />
+	</sws:dynamic-wsdl>
+
+</beans>

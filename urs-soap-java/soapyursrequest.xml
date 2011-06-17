@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <soapenv:Header>
+    <wsa:ReplyTo>
+      <wsa:Address>http://localhost:8080/urs-soap-java</wsa:Address>
+    </wsa:ReplyTo>
+    <wsa:From>
+      <wsa:Address>http://localhost:8080/urs-soap-java</wsa:Address>
+    </wsa:From>
+  </soapenv:Header>
+  <soapenv:Body>
+    <URSRequest xmlns="http://raytheon.com/urs/schemas">
+      <User>
+        <UserName>katie</UserName>
+        <Password>secret</Password>
+      </User>
+    </URSRequest>
+  </soapenv:Body>
+</soapenv:Envelope>

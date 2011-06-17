@@ -1,0 +1,21 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="qualified"
+        targetNamespace="http://raytheon.com/urs/schemas"
+        xmlns:urs="http://raytheon.com/urs/schemas">
+    <xs:element name="URSRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="User" ref="urs:UseTyper"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="UserType">
+        <xs:sequence>
+            <xs:element name="UserName" type="xs:string"/>
+            <xs:element name="Password" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="URSResponse" type="xs:string"/>
+    
+</xs:schema>

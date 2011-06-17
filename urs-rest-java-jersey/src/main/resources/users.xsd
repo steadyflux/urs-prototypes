@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.raytheon.com/urs/models"
+           xmlns:c="http://www.raytheon.com/urs/models"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+          xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+          jaxb:version="1.0"
+          xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+          jaxb:extensionBindingPrefixes="xjc">
+
+  <xs:annotation>
+    <xs:appinfo>
+      <jaxb:globalBindings>
+        <xjc:simple />
+      </jaxb:globalBindings>
+    </xs:appinfo>
+  </xs:annotation>
+
+
+  <xs:element name="user">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="c:name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="name">
+    <xs:sequence>
+      <xs:element name="first" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      <xs:element name="middle" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      <xs:element name="last" minOccurs="0" maxOccurs="1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
